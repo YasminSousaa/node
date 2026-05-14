@@ -1,21 +1,25 @@
-const express = require('express')
+const express = require("express")
+const path = require("path")
+
 const app = express()
 
-app.set('view engine', 'ejs')
-app.set('views', './views')
+// configura EJS
+app.set("view engine", "ejs")
+app.set("views", path.join(__dirname, "../views"))
 
-app.get('/', (req, res) => {
+app.get("/", (req, res) => {
 
     const evento = {
-        nome: 'Copa do Mundo 2026 - Evento PaaS',
-        local: 'São Paulo - Brasil',
-        data: '15 de Julho de 2026',
-        horario: '19:00',
-        descricao: 'Evento em PaaS com integração de seleções',
-        cadastro: 'https://SEU-FLASK.onrender.com'
+        nome: "Copa do Mundo 2026 - Evento PaaS",
+        local: "São Paulo - Brasil",
+        data: "15 de Julho de 2026",
+        horario: "19:00",
+        descricao: "Evento de integração das seleções na plataforma PaaS",
+        cadastro: "https://SEU-FLASK.onrender.com"
     }
 
-    res.render('index', { evento })
+    res.render("index", { evento })
 })
 
+// IMPORTANTE: export para Vercel
 module.exports = app
