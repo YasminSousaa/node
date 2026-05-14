@@ -1,5 +1,4 @@
 const express = require('express')
-
 const app = express()
 
 app.set('view engine', 'ejs')
@@ -11,17 +10,12 @@ app.get('/', (req, res) => {
         local: 'São Paulo - Brasil',
         data: '15 de Julho de 2026',
         horario: '19:00',
-        descricao:
-            'Evento promovido em plataforma PaaS para integração de seleções da Copa do Mundo 2026.',
-        cadastro:
-            'http://localhost:8080'
+        descricao: 'Evento em plataforma PaaS para integração de seleções.',
+        cadastro: 'https://SEU-FLASK-URL.onrender.com'
     }
 
     res.render('index', { evento })
 })
 
-const PORT = process.env.PORT || 3000
-
-app.listen(PORT, () => {
-    console.log(`Servidor rodando na porta ${PORT}`)
-})
+// 🔴 IMPORTANTE: exporta o app
+module.exports = app
