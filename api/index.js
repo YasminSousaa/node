@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
         data: "15 de Julho de 2026",
         horario: "19:00",
         descricao: "Evento de integração das seleções na plataforma PaaS",
-        cadastro: "https://SEU-FLASK.onrender.com"
+        cadastro: "https://flask-python1.vercel.app/"
     }
 
     res.render("index", { evento })
